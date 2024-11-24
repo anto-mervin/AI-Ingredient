@@ -7,4 +7,6 @@ def home(request):
     return render(request, 'home.html')
 
 def ai_recipe(request):
+
+    
     return render(request, 'ai_recipe.html')
