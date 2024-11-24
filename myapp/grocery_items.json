@@ -1,0 +1,7 @@
+[
+    {"id": 1, "name": "Apple", "price": 2.50, "category": "fruit", "image": "apple.jpg"},
+    {"id": 2, "name": "Banana", "price": 1.20, "category": "fruit", "image": "banana.jpg"},
+    {"id": 3, "name": "Carrot", "price": 0.99, "category": "vegetable", "image": "carrot.jpg"},
+    {"id": 4, "name": "Cumin", "price": 3.50, "category": "spice", "image": "cumin.jpg"}
+  ]
+  

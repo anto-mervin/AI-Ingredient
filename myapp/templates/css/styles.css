@@ -1,0 +1,19 @@
+/* Custom Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: #f7931a; /* Custom orange color */
+}
+
+p {
+  color: #53d3e0; /* Custom light blue color */
+}
+
+footer {
+  font-size: 14px;
+}
