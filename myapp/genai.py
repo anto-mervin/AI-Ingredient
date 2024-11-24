@@ -1,5 +1,5 @@
 import google.generativeai as genai
-import prompt
+from . import prompt
 import json
 
 genai.configure(api_key="AIzaSyDB9Xerpu6YhwejJsUVmZsUVmLV1RB8lsk")
@@ -39,12 +39,15 @@ def generate_ingredients(recipe):
         }
     ]
 
+    print('\nGenerating response')
+
     response = model.generate_content(refined_prompt)
+    # print(response.text)
 
     jsonresponse = json_response(response)
 
 
-    print(jsonresponse)
+    # print(jsonresponse)
     return jsonresponse
 
 

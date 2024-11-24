@@ -1,4 +1,6 @@
 def generate_prompt(recipe_name):
+
+    
     prompt = f"""
 Act as a programmer who is passionate about cooking. When given the recipe name "{recipe_name}" as input, 
 generate a JSON structure containing the ingredients required for that recipe.
