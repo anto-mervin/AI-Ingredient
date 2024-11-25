@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import request
 from . import genai
 import json
-from django.templatetags.static import static  # To access static files
-from django.contrib.staticfiles import finders  # Import to locate static files
 from django.conf import settings
 import os
 
