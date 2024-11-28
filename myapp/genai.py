@@ -21,6 +21,7 @@ def json_response(response):
     print("Cleaned Response:\n", cleaned_response, '\n')
 
     # Parse the cleaned_response string to a list of dictionaries
+    print("clean",cleaned_response)
     try:
         api_response = json.loads(cleaned_response)
     except json.JSONDecodeError as e:
