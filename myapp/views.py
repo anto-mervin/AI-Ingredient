@@ -22,6 +22,21 @@ def ai_recipe(request):
         ingredients = genai.generate_ingredients(search_query)
         print('\nIngredient:',ingredients)
 
+        # Check if the response contains an error
+        if "error" in ingredients[0]:
+            error_message = ingredients[0]["error"]
+            print("\nError:", error_message)
+            return render(
+                request,
+                'ai_recipe.html',
+                {
+                    'recipes': None,
+                    'matched_groceries': None,
+                    'search_query': search_query,
+                    'error_message': error_message,
+                }
+            )
+
         # Match groceries from your JSON file
         groceries_file = os.path.join(settings.BASE_DIR, 'myapp/static/grocery.json')
         with open(groceries_file, 'r') as file:
@@ -54,36 +69,3 @@ def ai_recipe(request):
     else:
         return render(request, 'ai_recipe.html', {'recipes': None, 'matched_groceries': None, 'search_query': ''})
 
-# def ai_recipe(request):
-#     search_query = request.GET.get('query', '')
-
-#     if search_query:
-#         print('\nRecipe:', search_query)
-#         ingredients = genai.generate_ingredients(search_query)
-#         print('\nIngredients:', ingredients)
-
-#         # Match groceries from your JSON file
-#         groceries_file = os.path.join(settings.BASE_DIR, 'myapp/static/grocery.json')
-#         with open(groceries_file, 'r') as file:
-#             grocery_data = json.load(file)
-
-#         matched_groceries = []
-#         for recipe in ingredients:
-#             for ingredient in recipe['ingredients']:
-#                 name = ingredient['name'].lower()
-#                 for category, items in grocery_data.items():
-#                     for item in items:
-#                         if name in item['name'].lower():
-#                             matched_groceries.append(item)
-
-#         return render(
-#             request,
-#             'ai_recipe.html',
-#             {
-#                 'recipes': ingredients,
-#                 'matched_groceries': matched_groceries,
-#                 'search_query': search_query,
-#             }
-#         )
-#     else:
-#         return render(request, 'ai_recipe.html', {'recipes': None, 'matched_groceries': None, 'search_query': ''})

@@ -132,6 +132,12 @@
           <button type="submit" class="btn btn-success">Search</button>
         </div>
       </form>
+
+      {% if error_message %}
+      <div class="alert alert-danger text-center mt-3">
+          {{ error_message }}
+      </div>
+      {% endif %}
     
       {% if recipes %}
       <div class="row mt-5">

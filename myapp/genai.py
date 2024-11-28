@@ -15,9 +15,10 @@ def json_response(response):
     cleaned_response = '[' + cleaned_response + ']'
 
     # Remove trailing commas if present
-    cleaned_response = cleaned_response.replace(",]", "]")  # Removes trailing comma before closing bracket
+    # cleaned_response = cleaned_response.replace(",]", "]")  # Removes trailing comma before closing bracket
 
-    # print("Cleaned Response:\n", cleaned_response, '\n')
+
+    print("Cleaned Response:\n", cleaned_response, '\n')
 
     # Parse the cleaned_response string to a list of dictionaries
     try:
